@@ -27,6 +27,8 @@ progresses	speeds	return
 ##### 입출력 예 #2
 모든 기능이 하루에 1%씩 작업이 가능하므로, 작업이 끝나기까지 남은 일수는 각각 5일, 10일, 1일, 1일, 20일, 1일입니다. 어떤 기능이 먼저 완성되었더라도 앞에 있는 모든 기능이 완성되지 않으면 배포가 불가능합니다.
 
+---
+큐가 처음이라 익숙하지 않아서 배열로 풀었음 ..다른 문제 다 풀고 오니까 ㅋㅋ ㅠㅠㅜ 정리해야하긴 할 듯
      
 ```java
 import java.util.*;
@@ -42,20 +44,20 @@ class Solution {
                 if (prog >= 100)
                     break;
                 prog += speeds[i];
-                workingTime++;  //일한 시간 입니다.
+                workingTime++; 
             }
             answer[i] = workingTime;
         }
         System.out.println(Arrays.toString(answer));
                 ArrayList<Integer> list = new ArrayList<>();
-        for(int i=0 ; i < answer.length ; i++){  //기준값 입니다.
+        for(int i=0 ; i < answer.length ; i++){  //기준값
             int origin = answer[i];
             int count = 1;
-            if(origin < 0){continue;} //조사가 완료된 대상이면 건너뛰기를 합니다.
-            for(int j=i+1 ; j < answer.length ; j++){  //기준값 다음의 값 입니다.
+            if(origin < 0){continue;} //조사가 완료된 대상이면 건너뛰기
+            for(int j=i+1 ; j < answer.length ; j++){  //기준값 다음의 값]
             	int compare = answer[j];
             	if(origin >= compare){
-            		answer[j] = -1; //조사가 완료되었으므로 대상에서 제거 합니다.
+            		answer[j] = -1; //조사가 완료되었으므로 대상에서 제거
             		count++;
             	} else {
             		break;
