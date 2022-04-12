@@ -125,3 +125,20 @@ class Solution {
     }
 }
 ```
+
+
+
+
+
+## Queue in java
+```java
+import java.util.LinkedList; //import
+import java.util.Queue; //import
+Queue<Integer> queue = new LinkedList<>(); //int형 queue 선언, linkedlist 이용
+Queue<String> queue = new LinkedList<>(); //String형 queue 선언, linkedlist 이용
+```
+큐는 linkedList로 선언해서 사용해야 한다   
+추가는 .add(value) 또는 .offer(value)      
+삭제는 .remove(), .poll()을 사용하면 제일 첫번째 값을 제거하고, .clear()를 하면 모든 값 삭제. poll()은 첫 번째 값이 비어있으면 null을 반환하고 remove()는 에러를 발생시킴. remove(value)로 넣으면 value에 해당하는 객체를 삭제함. 중복값이 있다면 더 앞에 있는 것부터 삭제      
+.peek()을 사용하면 첫 번째 값을 참조     
+queue.size()로 크기를 구할 수 있음 
